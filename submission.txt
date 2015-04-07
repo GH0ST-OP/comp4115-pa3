@@ -1,0 +1,312 @@
+Part 1:
+
+You cannot use the function name exp, it is already in use by MySQL.
+mysql> create function myexp (a INT, b INT)
+    -> returns INT
+    -> return a*b;
+
+Part 2:
+
+mysql> select myarea_udf(3.2);
++-----------------+
+| myarea_udf(3.2) |
++-----------------+
+|            32.2 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> select myarea_udf(1);
++---------------+
+| myarea_udf(1) |
++---------------+
+|             3 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select myarea_udf(1.0);
++-----------------+
+| myarea_udf(1.0) |
++-----------------+
+|             3.1 |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> select myarea_udf(10.0);
++------------------+
+| myarea_udf(10.0) |
++------------------+
+|            314.2 |
++------------------+
+1 row in set (0.01 sec)
+
+=========================================================
+
+mysql> select mytime_udf(30);
++----------------+
+| mytime_udf(30) |
++----------------+
+| 0:0:30         |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> select mytime_udf(300);
++-----------------+
+| mytime_udf(300) |
++-----------------+
+| 0:5:0           |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> select mytime_udf(3000);
++------------------+
+| mytime_udf(3000) |
++------------------+
+| 0:50:0           |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> select mytime_udf(30000);
++-------------------+
+| mytime_udf(30000) |
++-------------------+
+| 8:20:0            |
++-------------------+
+1 row in set (0.00 sec)
+
+Part 3:
+
+mysql> use employees
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> source stored_procedures.sql
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> call fullname("Bouloucos");
++---------------+-----------+
+| first_name    | last_name |
++---------------+-----------+
+| Cristinel     | Bouloucos |
+| Vishv         | Bouloucos |
+| Kazuhide      | Bouloucos |
+| Oguz          | Bouloucos |
+| Gennady       | Bouloucos |
+| Tiina         | Bouloucos |
+| Marla         | Bouloucos |
+| Perry         | Bouloucos |
+| Christophe    | Bouloucos |
+| Koichi        | Bouloucos |
+| Satoru        | Bouloucos |
+| Iara          | Bouloucos |
+| Marjo         | Bouloucos |
+| Stamatina     | Bouloucos |
+| Shichao       | Bouloucos |
+| Aimee         | Bouloucos |
+| Teruyuki      | Bouloucos |
+| Shugo         | Bouloucos |
+| Yinghua       | Bouloucos |
+| Vidar         | Bouloucos |
+| Stein         | Bouloucos |
+| Naraig        | Bouloucos |
+| Wilmer        | Bouloucos |
+| Collette      | Bouloucos |
+| Xiaocheng     | Bouloucos |
+| Jolita        | Bouloucos |
+| Krister       | Bouloucos |
+| Jacqueline    | Bouloucos |
+| Shaowei       | Bouloucos |
+| Charlene      | Bouloucos |
+| Dayanand      | Bouloucos |
+| Nikolaus      | Bouloucos |
+| Dinah         | Bouloucos |
+| Garnet        | Bouloucos |
+| Basil         | Bouloucos |
+| Geoffrey      | Bouloucos |
+| Nitsan        | Bouloucos |
+| Shuichi       | Bouloucos |
+| Mara          | Bouloucos |
+| Xinglin       | Bouloucos |
+| Apostol       | Bouloucos |
+| Khatoun       | Bouloucos |
+| Chenye        | Bouloucos |
+| Peternela     | Bouloucos |
+| Jinxi         | Bouloucos |
+| Arnd          | Bouloucos |
+| Moty          | Bouloucos |
+| Shaw          | Bouloucos |
+| Caolyn        | Bouloucos |
+| Hauke         | Bouloucos |
+| Kwan          | Bouloucos |
+| Marin         | Bouloucos |
+| Shahar        | Bouloucos |
+| Lokesh        | Bouloucos |
+| Seshu         | Bouloucos |
+| Ferdinand     | Bouloucos |
+| Vugranam      | Bouloucos |
+| Karsten       | Bouloucos |
+| Nirmal        | Bouloucos |
+| Elliott       | Bouloucos |
+| Piyawadee     | Bouloucos |
+| Maha          | Bouloucos |
+| Ohad          | Bouloucos |
+| Lijia         | Bouloucos |
+| Kiyotoshi     | Bouloucos |
+| Barun         | Bouloucos |
+| Taegyun       | Bouloucos |
+| Samphel       | Bouloucos |
+| Jingling      | Bouloucos |
+| Hideyuki      | Bouloucos |
+| Rosita        | Bouloucos |
+| Hidde         | Bouloucos |
+| Pintsang      | Bouloucos |
+| Kendra        | Bouloucos |
+| Kankanahalli  | Bouloucos |
+| Tran          | Bouloucos |
+| Ohad          | Bouloucos |
+| Haldon        | Bouloucos |
+| Hidekazu      | Bouloucos |
+| Navin         | Bouloucos |
+| Diederik      | Bouloucos |
+| Yuchang       | Bouloucos |
+| Evgueni       | Bouloucos |
+| Vincent       | Bouloucos |
+| Sven          | Bouloucos |
+| Remco         | Bouloucos |
+| Tonia         | Bouloucos |
+| Kazuhide      | Bouloucos |
+| Youngkon      | Bouloucos |
+| Sajjan        | Bouloucos |
+| Conal         | Bouloucos |
+| Christoph     | Bouloucos |
+| Yakkov        | Bouloucos |
+| Eishiro       | Bouloucos |
+| Angus         | Bouloucos |
+| Georgy        | Bouloucos |
+| Abdelwaheb    | Bouloucos |
+| Aria          | Bouloucos |
+| Jaana         | Bouloucos |
+| Yechezkel     | Bouloucos |
+| Muneo         | Bouloucos |
+| Tetsurou      | Bouloucos |
+| Chrisa        | Bouloucos |
+| Lansing       | Bouloucos |
+| Arve          | Bouloucos |
+| Geraldo       | Bouloucos |
+| Adam          | Bouloucos |
+| Shaibal       | Bouloucos |
+| Fusako        | Bouloucos |
+| Tamiya        | Bouloucos |
+| Masanao       | Bouloucos |
+| Eberhardt     | Bouloucos |
+| Tamiya        | Bouloucos |
+| Radhia        | Bouloucos |
+| Arvind        | Bouloucos |
+| Bilhanan      | Bouloucos |
+| Stepehn       | Bouloucos |
+| Aamer         | Bouloucos |
+| Gil           | Bouloucos |
+| True          | Bouloucos |
+| Sangeeta      | Bouloucos |
+| Yishay        | Bouloucos |
+| Giao          | Bouloucos |
+| Fan           | Bouloucos |
+| Alois         | Bouloucos |
+| Adel          | Bouloucos |
+| Fuqing        | Bouloucos |
+| Mona          | Bouloucos |
+| Gal           | Bouloucos |
+| Jaihie        | Bouloucos |
+| Zhonghui      | Bouloucos |
+| Alair         | Bouloucos |
+| Jiang         | Bouloucos |
+| Boguslaw      | Bouloucos |
+| Heeju         | Bouloucos |
+| Martijn       | Bouloucos |
+| Miyeon        | Bouloucos |
+| Bernt         | Bouloucos |
+| Janalee       | Bouloucos |
+| Arunachalam   | Bouloucos |
+| Mohit         | Bouloucos |
+| Yannis        | Bouloucos |
+| Soenke        | Bouloucos |
+| Padma         | Bouloucos |
+| Bogdan        | Bouloucos |
+| Taizo         | Bouloucos |
+| Masanao       | Bouloucos |
+| Mads          | Bouloucos |
+| Dines         | Bouloucos |
+| Cheong        | Bouloucos |
+| Samphel       | Bouloucos |
+| Shaowen       | Bouloucos |
+| Poorav        | Bouloucos |
+| Krister       | Bouloucos |
+| Rasiah        | Bouloucos |
+| Itzchak       | Bouloucos |
+| Satosi        | Bouloucos |
+| Rayond        | Bouloucos |
+| Tsuneo        | Bouloucos |
+| Munehiko      | Bouloucos |
+| Tadahiko      | Bouloucos |
+| Ingemar       | Bouloucos |
+| Khatoun       | Bouloucos |
+| Snehasis      | Bouloucos |
+| Randy         | Bouloucos |
+| Chuanyi       | Bouloucos |
+| Satyanarayana | Bouloucos |
+| Valeri        | Bouloucos |
+| Bernice       | Bouloucos |
+| Makato        | Bouloucos |
+| Kolar         | Bouloucos |
+| Apostol       | Bouloucos |
+| Faiza         | Bouloucos |
+| Zissis        | Bouloucos |
+| Danel         | Bouloucos |
+| Temple        | Bouloucos |
+| Djenana       | Bouloucos |
+| Jianhui       | Bouloucos |
+| Xiaoqiu       | Bouloucos |
+| Palash        | Bouloucos |
+| Pantung       | Bouloucos |
+| Larisa        | Bouloucos |
+| Chenye        | Bouloucos |
+| Kristinn      | Bouloucos |
+| Otmar         | Bouloucos |
+| Heather       | Bouloucos |
+| Kyoichi       | Bouloucos |
+| Arvind        | Bouloucos |
+| Mori          | Bouloucos |
+| Jianhao       | Bouloucos |
+| Almudena      | Bouloucos |
+| Rosine        | Bouloucos |
+| Percy         | Bouloucos |
+| Goetz         | Bouloucos |
+| Horward       | Bouloucos |
++---------------+-----------+
+195 rows in set (0.09 sec)
+
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> call avgsalary("d002");
++----------------------+
+| sum(salary)/count(*) |
++----------------------+
+|           70489.3649 |
++----------------------+
+1 row in set (4.26 sec)
+
+Query OK, 0 rows affected (4.26 sec)
+
+mysql> call genderlist("M");
++----------+
+| count(*) |
++----------+
+|   179973 |
++----------+
+1 row in set (0.09 sec)
+
+Query OK, 0 rows affected (0.09 sec)
